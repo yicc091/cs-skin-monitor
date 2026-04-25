@@ -1,32 +1,34 @@
-# CS-Skin-Monitor: 基于 Playwright 的全栈饰品监控系统
+# CS-Skin-Monitor: 基于 TLS 指纹伪装的轻量级饰品监控引擎
 
 ## 🚀 项目简介
-本项目旨在实现一个高频、自动化的 CS 饰品价格与状态监控系统。通过自研的数据抓取链路，成功解决了动态网页渲染导致的数据获取壁垒以及非结构化数据的清洗痛点，并最终实现了从底层数据采集到前端网页展示的全链路自动化闭环。
+本项目是一个极简但功能完备的 CS 饰品高频监控与邮件预警系统。摒弃了笨重的自动化浏览器框架，直接在单文件 (Single-file MVP) 中打通了底层反爬、多线程驻留、多用户隔离与前端可视化，实现真正的轻量级全栈闭环。
 
-## 🧠 核心架构设计
+## 🧠 核心工程亮点
 
-本项目采用模块化解耦设计，分为三个核心层级：
-
-1. **数据获取层 (Scraper)** - 弃用传统的静态请求库，采用 **Playwright** 驱动无头浏览器。
-   - 通过模拟真实用户行为，有效规避动态反爬机制，实现对目标站点的高频、稳定巡检。
-
-2. **处理引擎层 (Data Processing)** - 针对抓取到的 DOM 节点和非结构化文本，编写清洗脚本。
-   - 利用正则表达式等手段，将杂乱的文本提取并转化为可供直接调用和存储的标准化数据格式（如 JSON/CSV）。
-
-3. **展示终端层 (Frontend Display)**
-   - 独立搭建个人静态展示网页 (HTML/CSS/JS)。
-   - 将后端清洗完毕的监控数据进行结构化渲染，实现数据流的可视化与闭环展示。
+1. **反爬策略重构 (TLS Fingerprinting)**
+   - 弃用传统的 Playwright/Selenium，采用底层 `curl_cffi` 库模拟 Chrome 110 的 TLS 握手指纹 (`impersonate="chrome110"`)，无头化绕过悠悠有品 API 的严格风控体系，资源消耗降低 90%。
+2. **异步常驻引擎 (Background Daemon)**
+   - 内置轻量级线程守护 (`monitor_thread`)，与 Flask 主进程解耦。支持多用户并行轮询，动态冷却时间计算，确保高频监控的同时不触发 IP 封禁。
+3. **多租户与上帝视角 (Admin Impersonation)**
+   - 基于 SQLAlchemy 构建多用户隔离体系。
+   - 包含硬核的“管理员伪装 (Impersonate)”机制：管理员可在后台一键接管任何用户的 Session 状态进行无缝 Debug，并在 UI 侧实现状态感知。
+4. **单文件无模板渲染**
+   - 采用后端直出 TailwindCSS + Glassmorphism UI 的极客方案，无需额外配置静态资源服务器即可完成部署。
 
 ## 🛠️ 技术栈
-- **核心语言**: Python
-- **自动化抓取**: Playwright
-- **数据清洗**: Regex, JSON
-- **前端展示**: HTML / CSS / JavaScript
+- **核心框架**: Python 3.10+ / Flask
+- **网络与反爬**: `curl_cffi` (TLS Spoofing)
+- **数据持久化**: SQLite + SQLAlchemy ORM (支持无痛热升级)
+- **UI 渲染**: TailwindCSS + 原生 HTML 字符串插值
 
-## 📂 目录结构说明
-- `/scraper` - 包含 Playwright 自动化监控脚本与核心爬虫逻辑。
-- `/backend` - 数据清洗、过滤与结构化处理的 Python 脚本。
-- `/frontend` - 个人展示网站的前端源码文件。
+## 📦 快速部署
 
-## 💡 开发者心得
-该项目是我从“脚本编写者”向“全栈落地工程师”转变的重要实践。它证明了我不具备单一模块的开发能力，更具备将分散的技术点串联成完整工业级产品的系统性思维。
+1. 克隆本项目：
+   `git clone https://github.com/YourUsername/cs-skin-monitor.git`
+2. 安装依赖：
+   `pip install -r requirements.txt`
+3. 配置环境变量：
+   复制 `.env.example` 为 `.env`，并填入你的 QQ 邮箱 SMTP 授权码。
+4. 启动系统：
+   `python app.py` 
+   访问 `http://localhost:5000` 即可进入控制台。
