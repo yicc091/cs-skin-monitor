@@ -11,7 +11,7 @@ import threading
 import sqlite3
 
 app = Flask(__name__, static_folder='static')
-app.secret_key = 'pku_ss_monitor_multi_user_key'
+app.secret_key = 'your_secret_key_here' # 开源展示占位符
 
 # ================= 1. 数据库模型 =================
 Base = declarative_base()
@@ -61,9 +61,8 @@ Session = sessionmaker(bind=engine)
 # ================= 2. 核心网络请求与发信 =================
 SMTP_HOST = "smtp.qq.com"
 SMTP_PORT = 465
-SENDER_EMAIL = "1005428722@qq.com"
-SENDER_PASS = "ciymliszckoibbgg"
-
+SENDER_EMAIL = "YOUR_EMAIL@qq.com"  # 开源展示占位符
+SENDER_PASS = "YOUR_AUTH_CODE"      # 开源展示占位符
 def get_search_headers(token):
     return {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
