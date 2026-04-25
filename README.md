@@ -2,7 +2,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-在线体验体验-success?style=for-the-badge)](http://8.148.68.30:5000)
 
-> 💡 **提示**：目前系统已部署至阿里云，点击上方徽章即可访问真实的控制台。
+> 💡 **提示**：目前系统已部署至阿里云，点击上方徽章即可访问真实的控制台（可使用用户名：test作为体验）。
 
 <img src="https://github.com/user-attachments/assets/cc204e57-cad2-4bcb-868b-73b00ef660d4" alt="Dashboard 预览" width="100%" />
 
