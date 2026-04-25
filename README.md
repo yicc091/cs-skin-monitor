@@ -2,7 +2,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-在线体验体验-success?style=for-the-badge)](http://8.148.68.30:5000)
 
-> 💡 **提示**：目前系统已部署至阿里云，点击上方徽章即可访问真实的控制台（可使用用户名：test作为体验）。
+> 💡 **提示**：目前系统已部署至阿里云，点击上方徽章即可访问真实的控制台（可使用用户名：test作为体验。需要在首页右上角的账号设置中，将邮箱改为自己的）。
 
 <img width="1268" height="698" alt="微信图片_20260425110401" src="https://github.com/user-attachments/assets/9ea89c23-d0ea-4f70-beee-781ce18782b4" />
 
