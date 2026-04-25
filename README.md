@@ -1,5 +1,13 @@
 # CS-Skin-Monitor: 基于 TLS 指纹伪装的轻量级饰品监控引擎
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-在线体验体验-success?style=for-the-badge)](http://8.148.68.30:5000)
+
+> 💡 **提示**：目前系统已部署至阿里云，点击上方徽章即可访问真实的控制台。
+
+![Dashboard 预览](<img width="1274" height="701" alt="微信图片_20260425104731" src="https://github.com/user-attachments/assets/cc284e57-cad2-4bcb-868b-73b00ef668d4" />)
+
+## 🚀 项目简介
+...（保留你之前的文字内容）
 ## 🚀 项目简介
 本项目是一个极简但功能完备的 CS 饰品高频监控与邮件预警系统。摒弃了笨重的自动化浏览器框架，直接在单文件 (Single-file MVP) 中打通了底层反爬、多线程驻留、多用户隔离与前端可视化，实现真正的轻量级全栈闭环。
 
