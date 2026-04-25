@@ -4,7 +4,7 @@
 
 > 💡 **提示**：目前系统已部署至阿里云，点击上方徽章即可访问真实的控制台。
 
-![Dashboard 预览](https://github.com/user-attachments/assets/cc204e57-cad2-4bcb-868b-73b00ef660d4)
+<img src="https://github.com/user-attachments/assets/cc204e57-cad2-4bcb-868b-73b00ef660d4" alt="Dashboard 预览" width="100%" />
 
 ## 🚀 项目简介
 本项目是一个极简但功能完备的 CS 饰品高频监控与邮件预警系统。摒弃了笨重的自动化浏览器框架，直接在单文件 (Single-file MVP) 中打通了底层反爬、多线程驻留、多用户隔离与前端可视化，实现真正的轻量级全栈闭环。
